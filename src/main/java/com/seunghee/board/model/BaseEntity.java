@@ -2,12 +2,6 @@ package com.seunghee.board.model;
 
 import jakarta.persistence.*;
 
-/**
- * 基础信息
- *
- * @author liuzh
- * @since 2016-01-31 21:42
- */
 public class BaseEntity {
     @Id
     @Column(name = "Id")

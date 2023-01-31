@@ -1,19 +1,29 @@
 package com.seunghee.board.service;
 
-//import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.seunghee.board.model.Board;
+import com.seunghee.board.mapper.BoardMapper;
+
+import java.util.List;
+
 
 @Service
 public class BoardService {
-    /* 
-    @Autowired
-    private CityMapper cityMapper;
+    
+    public BoardMapper boardMapper;
 
-    public List<City> getAll(City city) {
-        if (city.getPage() != null && city.getRows() != null) {
-            PageHelper.startPage(city.getPage(), city.getRows());
-        }
-        return cityMapper.selectAll();
+    @Autowired
+    public BoardService(BoardMapper boardMapper) {
+        this.boardMapper = boardMapper;
     }
-    */
+
+    public List<Board> findBoards() {
+        return boardMapper.findBoards();
+    }
+
+    public void insertBoard(Board board) {
+       boardMapper.insertBoard(board);
+    }
+    
 }

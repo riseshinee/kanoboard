@@ -1,24 +1,42 @@
 package com.seunghee.board.model;
 
-public class Board extends BaseEntity{
-    private String name;
+import java.time.LocalDateTime;
 
-    private String state;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-    public String getName() {
-        return name;
-    }
+@Entity
+@Data
+public class Board{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Setter
+    private int id;
 
-    public String getState() {
-        return state;
-    }
+    @Getter @Setter
+    private String user_id;
 
-    public void setState(String state) {
-        this.state = state;
-    }
+    @Getter @Setter
+    private String title;
+
+    @Getter @Setter
+    private String content;
+
+    @Setter
+    private LocalDateTime createdAt;
+
+    @Setter
+    private LocalDateTime  updatedAt;
+
+    @Setter
+    private LocalDateTime  deletedAt;
+
+
 
 }
