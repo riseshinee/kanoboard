@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -28,19 +27,16 @@ public class BoardController {
     }
 
     @GetMapping("/list")
-    @ResponseBody
+    //@ResponseBody
     public List<Board> findBoards() {
         return boardService.findBoards();
     }
 
     @PostMapping("/create")
-    @ResponseBody
+    //@ResponseBody
     public void insertBoard( Board board) {
         //log.info("insertBoard : {}", board);
         boardService.insertBoard(board);
     }
-
-
-    
     
 }

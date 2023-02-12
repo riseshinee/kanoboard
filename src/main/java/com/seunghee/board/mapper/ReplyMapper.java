@@ -13,7 +13,7 @@ import com.seunghee.board.model.Reply;
 @Repository
 public interface ReplyMapper {
     @Select("SELECT * FROM reply WHERE board_id = #{board_id}")
-    public List<Reply> getReplyByBoardId();
+    public List<Reply> getReplyByBoardId(Long board_id);
 
 	@Insert("INSERT INTO reply (reply_id, board_id, user_id, content) values (#{reply_id}, #{board_id}, #{user_id}, #{content})")
     public void insertReply(Reply reply);
