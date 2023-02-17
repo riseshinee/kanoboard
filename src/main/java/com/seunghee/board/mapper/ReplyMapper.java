@@ -15,6 +15,10 @@ public interface ReplyMapper {
     @Select("SELECT * FROM reply WHERE board_id = #{board_id}")
     public List<Reply> getReplyByBoardId(Long board_id);
 
+    @Select("SELECT * FROM reply WHERE id = #{id}")
+    public Reply getReplyById(Long id);
+
 	@Insert("INSERT INTO reply (reply_id, board_id, user_id, content) values (#{reply_id}, #{board_id}, #{user_id}, #{content})")
     public void insertReply(Reply reply);
+
 }

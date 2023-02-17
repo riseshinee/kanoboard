@@ -20,7 +20,7 @@ public class Reply{
     private int id;
 
     @Getter @Setter
-    private String reply_id;
+    public Long reply_id;
 
     @Getter @Setter
     private String board_id;
