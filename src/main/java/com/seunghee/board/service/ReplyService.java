@@ -48,8 +48,13 @@ public class ReplyService {
         }
     }
 
-    //TODO : 댓글 수정
-    //TODO : 댓글 삭제
+    public void updateReplyById(Reply reply){
+        replyMapper.updateReplyById(reply);
+    }
+
+    public void deleteReplyById(int id){
+        replyMapper.deleteReplyById(id);
+    }
     //TODO : 내가 쓴 댓글 보기
     
 }
