@@ -37,6 +37,4 @@ public class Board{
     @Setter
     private LocalDateTime  deletedAt;
 
-
-
 }

@@ -32,10 +32,12 @@ public class ReplyController {
         return replyService.getReplyByBoardId(board_id);
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public void insertReply(Reply reply) {
         //log.info("insertBroard : {}", board);
         replyService.insertReply(reply);
     }
+
+    
     
 }

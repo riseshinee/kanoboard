@@ -20,29 +20,36 @@ public class ReplyService {
         this.replyMapper = replyMapper;
     }
 
+    //게시판 기준으로 댓글 가져오기
     public List<Reply> getReplyByBoardId (Long board_id ) {
         return replyMapper.getReplyByBoardId(board_id);
     }
 
+    //댓글 가져오기
     public Reply getReplyById (Long id ) {
         return (Reply) replyMapper.getReplyById(id);
     }
 
+    //댓글, 대댓글 생성 (대댓글은 depth 1까지만 허용)
     public void insertReply(Reply reply) {
         
         if( reply.reply_id != null){
             Reply result = new Reply();
             result =  replyMapper.getReplyById(reply.reply_id);
 
-            log.info("insertReply : {}", result);
+            //log.info("insertReply : {}", result);
             if( result.reply_id == null )
                 replyMapper.insertReply(reply);
+            //오류 리턴하기
 
         }
         else{
-    
             replyMapper.insertReply(reply);
         }
     }
+
+    //TODO : 댓글 수정
+    //TODO : 댓글 삭제
+    //TODO : 내가 쓴 댓글 보기
     
 }
