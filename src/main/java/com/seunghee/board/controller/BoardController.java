@@ -33,6 +33,8 @@ public class BoardController {
     public List<Board> getBoards() {
         return boardService.getBoards();
     }
+    //TODO : get 내가 쓴 글 조회
+    // get 타이틀, 내용으로 게시글 서치
 
     @PostMapping
     public void insertBoard( Board board) {
