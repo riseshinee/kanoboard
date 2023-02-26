@@ -29,4 +29,7 @@ public interface BoardMapper {
 
     @Update("UPDATE board SET deletedAt = #{deletedAt} WHERE id = #{id}")
     public void deleteBoardById(int id, String  deletedAt);
+
+    @Select("SELECT * FROM board WHERE user_id = #{user_id}")
+    public List<Board> getBoardByUserId(String user_id);
 }

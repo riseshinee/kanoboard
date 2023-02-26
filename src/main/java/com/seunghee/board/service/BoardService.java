@@ -21,7 +21,6 @@ public class BoardService {
         this.boardMapper = boardMapper;
     }
 
-    //
     public List<Board> getBoards() {
         return boardMapper.getBoards();
     }
@@ -43,6 +42,8 @@ public class BoardService {
         boardMapper.deleteBoardById(id,  deleteAt);
     }
 
-    //TODO: 내가 쓴 게시글 보기
+    public List<Board> getBoardByUserId(String user_id) {
+        return boardMapper.getBoardByUserId(user_id);
+    }
     
 }

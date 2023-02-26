@@ -33,9 +33,7 @@ public class BoardController {
     public List<Board> getBoards() {
         return boardService.getBoards();
     }
-    //TODO : get 내가 쓴 글 조회
-    // get 타이틀, 내용으로 게시글 서치
-
+    
     @PostMapping
     public void insertBoard( Board board) {
         //log.info("insertBoard : {}", board);
@@ -54,4 +52,11 @@ public class BoardController {
         boardService.deleteBoardById(id);
     }
     
+    @GetMapping("/{userId}")
+    public List<Board> getBoardByUserId(@PathVariable("userId") String userId) {
+        return boardService.getBoardByUserId(userId);
+    }
+
+    // get 타이틀, 내용으로 게시글 서치
+
 }
