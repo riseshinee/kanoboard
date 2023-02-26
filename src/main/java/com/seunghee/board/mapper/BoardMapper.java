@@ -31,5 +31,8 @@ public interface BoardMapper {
     public void deleteBoardById(int id, String  deletedAt);
 
     @Select("SELECT * FROM board WHERE user_id = #{user_id}")
-    public List<Board> getBoardByUserId(String user_id);
+    public List<Board> getBoardsByUserId(String user_id);
+
+    @Select("SELECT * FROM board WHERE id = ${id}")
+    public Board getBoardById(int id);
 }

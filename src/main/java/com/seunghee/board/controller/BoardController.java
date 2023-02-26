@@ -52,9 +52,14 @@ public class BoardController {
         boardService.deleteBoardById(id);
     }
     
-    @GetMapping("/{userId}")
-    public List<Board> getBoardByUserId(@PathVariable("userId") String userId) {
-        return boardService.getBoardByUserId(userId);
+    @GetMapping("/list/{userId}")
+    public List<Board> getBoardsByUserId(@PathVariable("userId") String userId) {
+        return boardService.getBoardsByUserId(userId);
+    }
+
+    @GetMapping("/{id}")
+    public Board getBoardById(@PathVariable("id") int id) {
+        return boardService.getBoardById(id);
     }
 
     // get 타이틀, 내용으로 게시글 서치

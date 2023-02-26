@@ -42,8 +42,12 @@ public class BoardService {
         boardMapper.deleteBoardById(id,  deleteAt);
     }
 
-    public List<Board> getBoardByUserId(String user_id) {
-        return boardMapper.getBoardByUserId(user_id);
+    public List<Board> getBoardsByUserId(String user_id) {
+        return boardMapper.getBoardsByUserId(user_id);
+    }
+
+    public Board getBoardById(int id) {
+        return boardMapper.getBoardById(id);
     }
     
 }
