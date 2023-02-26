@@ -29,6 +29,9 @@ public interface ReplyMapper {
     @Delete("DELETE FROM reply WHERE id = #{id}")
     public void deleteReplyById(int id);
 
+    @Select("SELECT * FROM reply WHERE user_id = #{user_id}")
+    public List<Reply> getReplyByUserId(String user_id);
+
 
     
 

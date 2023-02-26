@@ -49,6 +49,11 @@ public class ReplyController {
     public void deleteReplyById(@PathVariable("id") int id) {
         replyService.deleteReplyById(id);
     }
+
+    @GetMapping("/{userId}")
+    public List<Reply> getReplyByUserId(@PathVariable("userId") String userId) {
+        return replyService.getReplyByUserId(userId);
+    }
     
 
     

@@ -55,6 +55,9 @@ public class ReplyService {
     public void deleteReplyById(int id){
         replyMapper.deleteReplyById(id);
     }
-    //TODO : 내가 쓴 댓글 보기
+   
+    public List<Reply> getReplyByUserId (String user_id ) {
+        return replyMapper.getReplyByUserId(user_id);
+    }
     
 }
